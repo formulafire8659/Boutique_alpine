@@ -11,19 +11,65 @@
         <div class="logo">Ma Boutique</div>
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#products">Produits</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="auth-buttons" id="auth-buttons">
+            <button id="login-btn">Connexion</button>
+            <button id="register-btn">Inscription</button>
+        </div>
         <div class="cart-icon" id="cart-icon">🛒 <span id="cart-count">0</span></div>
     </header>
 
+    <!-- Modal de connexion -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Connexion</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <p>Pas encore de compte? <a href="#" id="show-register">S'inscrire</a></p>
+        </div>
+    </div>
+
+    <!-- Modal d'inscription -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Inscription</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
     <main>
-        <section class="products">
+        <section class="filters">
+            <h2>Filtrer les produits</h2>
+            <div class="filter-options">
+                <select id="category-filter">
+                    <option value="all">Toutes catégories</option>
+                    <option value="vetements">Vêtements</option>
+                    <option value="chaussures">Chaussures</option>
+                    <option value="accessoires">Accessoires</option>
+                </select>
+                <input type="range" id="price-filter" min="0" max="150" value="150">
+                <span id="price-value">Jusqu'à 150€</span>
+            </div>
+        </section>
+
+        <section class="products" id="products">
             <h2>Nos Produits</h2>
             <div class="product-grid" id="product-grid">
-                <!-- Les produits seront ajoutés dynamiquement par JavaScript -->
+                <!-- Produits chargés dynamiquement -->
             </div>
         </section>
 
@@ -33,7 +79,6 @@
                 <button class="close-cart" id="close-cart">×</button>
             </div>
             <div class="cart-items" id="cart-items">
-                <!-- Les articles du panier seront ajoutés ici -->
                 <p class="empty-cart">Votre panier est vide</p>
             </div>
             <div class="cart-total">
@@ -43,7 +88,7 @@
         </aside>
     </main>
 
-    <footer>
+    <footer id="contact">
         <p>&copy; 2023 Ma Boutique en Ligne. Tous droits réservés.</p>
     </footer>
 
