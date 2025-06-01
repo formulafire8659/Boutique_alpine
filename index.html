@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique en Ligne</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Ma Boutique</div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" id="cart-icon">🛒 <span id="cart-count">0</span></div>
+    </header>
+
+    <main>
+        <section class="products">
+            <h2>Nos Produits</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Les produits seront ajoutés dynamiquement par JavaScript -->
+            </div>
+        </section>
+
+        <aside class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Votre Panier</h3>
+                <button class="close-cart" id="close-cart">×</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Les articles du panier seront ajoutés ici -->
+                <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total">0</span> €</p>
+                <button class="checkout-btn">Passer la commande</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Ma Boutique en Ligne. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
