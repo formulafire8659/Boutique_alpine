@@ -3,11 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détail du produit - Ma Boutique</title>
+    <title>Détail Produit - Ma Boutique</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Le contenu sera généré dynamiquement par JavaScript -->
+    <header>
+        <div class="logo">Ma Boutique</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#products">Produits</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="auth-btn login-btn">Connexion</button>
+            <button class="auth-btn register-btn">Inscription</button>
+        </div>
+        <div class="cart-icon" id="cart-icon">🛒 <span id="cart-count">0</span></div>
+    </header>
+
+    <main class="product-detail-container">
+        <a href="index.html" class="back-to-products">← Retour aux produits</a>
+        
+        <div class="product-detail">
+            <div class="product-detail-image">
+                <img id="product-detail-img" src="" alt="">
+                <div class="product-thumbnails">
+                    <!-- Miniatures seront ajoutées en JS -->
+                </div>
+            </div>
+            
+            <div class="product-detail-info">
+                <h1 id="product-detail-title"></h1>
+                <div class="product-rating">
+                    ★★★★★ <span class="review-count">(24 avis)</span>
+                </div>
+                
+                <div class="product-detail-price" id="product-detail-price"></div>
+                
+                <p class="product-detail-description" id="product-detail-description"></p>
+                
+                <div class="product-options">
+                    <div class="option-group">
+                        <label for="product-size">Taille:</label>
+                        <select id="product-size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="product-color">Couleur:</label>
+                        <select id="product-color">
+                            <option value="noir">Noir</option>
+                            <option value="blanc">Blanc</option>
+                            <option value="bleu">Bleu</option>
+                            <option value="rouge">Rouge</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="product-quantity">Quantité:</label>
+                        <input type="number" id="product-quantity" min="1" value="1">
+                    </div>
+                </div>
+                
+                <button class="detail-add-to-cart" id="add-to-cart-detail">Ajouter au panier</button>
+                
+                <div class="product-detail-meta">
+                    <p><strong>Catégorie:</strong> <span id="product-category"></span></p>
+                    <p><strong>Référence:</strong> <span id="product-id"></span></p>
+                    <p><strong>Livraison:</strong> 2-3 jours ouvrables</p>
+                    <p><strong>Retours:</strong> 30 jours satisfait ou remboursé</p>
+                </div>
+            </div>
+        </div>
+        
+        <section class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="specs">Spécifications</button>
+                <button class="tab-btn" data-tab="reviews">Avis (24)</button>
+            </div>
+            
+            <div class="tab-content active" id="description-tab">
+                <h3>Détails du produit</h3>
+                <p id="product-full-description"></p>
+            </div>
+            
+            <div class="tab-content" id="specs-tab">
+                <h3>Caractéristiques techniques</h3>
+                <table class="specs-table">
+                    <tr>
+                        <th>Matériau</th>
+                        <td id="product-material">Coton 100%</td>
+                    </tr>
+                    <tr>
+                        <th>Origine</th>
+                        <td id="product-origin">Fabriqué en France</td>
+                    </tr>
+                    <tr>
+                        <th>Entretien</th>
+                        <td id="product-care">Lavage machine à 30°</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="tab-content" id="reviews-tab">
+                <h3>Avis clients</h3>
+                <div class="review">
+                    <div class="review-header">
+                        <span class="review-author">Jean D.</span>
+                        <span class="review-rating">★★★★★</span>
+                        <span class="review-date">15/06/2023</span>
+                    </div>
+                    <p class="review-text">Excellent produit, conforme à la description. Je recommande !</p>
+                </div>
+                <!-- Plus d'avis pourraient être ajoutés dynamiquement -->
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2023 Ma Boutique en Ligne. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Panier latéral -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="close-cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Votre panier est vide</p>
+        </div>
+        <div class="cart-total">
+            <p>Total: <span id="cart-total">0</span> €</p>
+            <button class="checkout-btn">Passer la commande</button>
+        </div>
+    </aside>
+
     <script src="script.js"></script>
 </body>
 </html>
